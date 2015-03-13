@@ -1,0 +1,42 @@
+
+<h1>congratulations you have created your first movie</h1>
+<div class="container">
+<div class="row">
+ 
+<div class="col-md-6">
+<p>Movie Title <%= @listing.title %></p>
+<p>Start Time: <%= @listing.time %></p>
+<p>Start Date: <%= @listing.date %></p>
+<p>Number of seats: <%= @listing.seats %> </p>
+<p>Venue Name: <%= @listing.seats %> </p>
+<p>Location: <%= @listing.location %></p>
+</div>
+ 
+
+<div class="col-md-6">
+<p><%= @listing.other_info %></p>
+<p><%= @listing.price %></p>
+<p><%= @listing.projector %></p>
+<p><%= @listing.cables %></p>
+<p><%= @listing.laptops %></p>
+<p><%= @listing.seating %></p>
+<p><%= @listing.blinds %></p>
+<p><%= @listing.lighting %></p>
+<p><%= @listing.camcorder %></p>
+<p><%= @listing.catering %></p>
+<p><%= @listing.toilets %></p>
+<p><%= @listing.fire %></p>
+<p><%= @listing.internet %></p>
+</div>
+ 
+</div>
+</div>
+ 
+<%= link_to "Edit", edit_listing_path(@listing)  %>
+<%= link_to "Back", listing_path  %>
+
+
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

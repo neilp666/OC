@@ -1,0 +1,42 @@
+<%= simple_form_for(@listing, html: {class: "form-signin"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title, label: false, placeholder: "Movie Title", input_html: {class: "form-control"} %>
+    <%= f.input :time, label: false, placeholder: "What time does your movie start?", input_html: {class: "form-control"} %>
+    <%= f.input :date, label: false, placeholder: "What date", input_html: {class: "form-control"} %>
+    <%= f.input :seats, label: false, placeholder: "Number of seats", input_html: {class: "form-control"} %>
+    <%= f.input :venue_name, label: false, placeholder: "Name of venue", input_html: {class: "form-control"} %>
+    <%= f.input :location, label: false, placeholder: "Address", input_html: {class: "form-control", rows: 5 } %>
+    <%= f.input :other_info, label: false, placeholder: "Other information", input_html: {class: "form-control", rows: 5} %>
+    <%= f.input :price, label: false, placeholder: "Ticket Price (£)", input_html: {class: "form-control"} %>
+    <div class="checkbox text-center">
+    <p> Projector </p>
+    <%= f.input :projector, required: false, label: false %>
+    <p> Cable </p>
+    <%= f.input :cables, required: false, label: false  %>
+    <p> Laptop </p>
+    <%= f.input :laptops, required: false, label: false  %>
+    <p> Seating </p>
+    <%= f.input :seating, required: false, label: false  %>
+    <p> Blinds </p>
+    <%= f.input :blinds, required: false, label: false %>
+    <p> Lighting </p>
+    <%= f.input :lighting, required: false, label: false %>
+    <p> Camcorder </p>
+    <%= f.input :camcorder, required: false, label: false %>
+    <p> Catering </p>
+    <%= f.input :catering, required: false, label: false %>
+    <p> Toilets </p>
+    <%= f.input :toilets, required: false, label: false %>
+    <p> Fire alarm </p>
+    <%= f.input :fire, required: false, label: false %>
+    <p> Wifi/internet </p>
+    <%= f.input :internet, required: false, label: false %>
+    </div>
+  </div>
+
+  
+    <%= f.button :submit, class: "btn btn-primary btn-block" %>
+
+<% end %>

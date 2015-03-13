@@ -1,0 +1,40 @@
+<h3>Current Movies you can buy tickets for </h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Time</th>
+      <th>Date</th>
+      <th>Seats</th>
+      <th>Venue name</th>
+      <th>Location</th>
+      <th>Other info</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.time %></td>
+        <td><%= listing.date %></td>
+        <td><%= listing.seats %></td>
+        <td><%= listing.venue_name %></td>
+        <td><%= listing.location %></td>
+        <td><%= listing.other_info %></td>
+        <td><%= listing.price %></td>
+        
+        
+        <td><%= link_to 'MORE INFO', listing %></td>
+        <td><%= link_to 'BUY TICKETS NOW' %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>

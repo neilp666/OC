@@ -1,0 +1,60 @@
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: url('Canberra.jpg');
+  height: 700px; 
+  margin: 0px;
+  background-size: cover;
+  background-position: center;
+  h1 {
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0px 2px 3px #555;
+  }
+
+  h2 {
+    color: #fff;
+    text-shadow: 0px 2px 3px #555;
+    margin-bottom: 80px;
+  }
+
+  .container {
+    padding: 80px 0px;
+  }
+  
+}
+
