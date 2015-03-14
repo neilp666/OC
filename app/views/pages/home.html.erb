@@ -1,10 +1,16 @@
 <div class="jumbotron">
+	<ul class="nav pull-right">
+		<p><%= link_to 'Login', new_user_session_path, class: "btn btn-sm" %>
+		<%= link_to 'About', about_path, class: "btn btn-sm" %></p>
+	</ul>
+
+  	
       <div class="container">
       	<div class="center">
       	<h1>Open Cinema</h1>
-      	<h2>The Easiest Way to Create Your own Cinema</h2> 
-      	<%= link_to "Get Started Today", new_user_registration_path ,class: "btn btn-primary btn-lg" %>
-      	<%= link_to "Or view current listings", listings_path ,class: "btn btn-primary btn-lg" %>
+      	<h2>The Easiest Way to Create Your Own Cinema</h2> 
+      	<%= link_to "Get Started Today ", new_user_registration_path ,class: "btn btn-success btn-xlarge" %>"/"
+      	<%= link_to "View Current Listings", listings_path ,class: "btn btn-danger btn-xlarge" %>
       </div>
 </div>
  
