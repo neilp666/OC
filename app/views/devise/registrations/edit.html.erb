@@ -4,8 +4,11 @@
 <h2 class="text-center">Settings</h2>
   <%= f.error_notification %>
 
+
+    <%= f.input :name, required: true, autofocus: true, label: false, placeholder: "Name", input_html: {class: "form-control"} %>
+
   
-    <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email", input_html: {class: "form-control"} %>
+    <%= f.input :email, required: true, label: false, placeholder: "Email", input_html: {class: "form-control"} %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
