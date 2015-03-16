@@ -1,6 +1,6 @@
 
-<h1>congratulations you have created your first movie</h1>
-<div class="container">
+<%= render 'layouts/header' %>
+
 <div class="row">
  
 <div class="col-md-6">
@@ -30,13 +30,9 @@
 </div>
  
 </div>
-</div>
+
  
 <%= link_to "Edit", edit_listing_path(@listing)  %>
 <%= link_to "Back", listing_path  %>
 
 
-
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
