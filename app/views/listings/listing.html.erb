@@ -1,42 +1,155 @@
-<%= simple_form_for(@listing, url: new_user_registration_path, method: :get, html: {class: "form-signin"}) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
 
-  <div class="form-inputs">
-    <%= f.input :title, label: false, placeholder: "Movie Title", input_html: {class: "form-control"} %>
-    <%= f.input :time, label: false, placeholder: "What time does your movie start?", input_html: {class: "form-control"} %>
-    <%= f.input :date, label: false, placeholder: "What date", input_html: {class: "form-control"} %>
-    <%= f.input :seats, label: false, placeholder: "Number of seats", input_html: {class: "form-control"} %>
-    <%= f.input :venue_name, label: false, placeholder: "Name of venue", input_html: {class: "form-control"} %>
-    <%= f.input :location, label: false, placeholder: "Address", input_html: {class: "form-control", rows: 5 } %>
-    <%= f.input :other_info, label: false, placeholder: "Other information", input_html: {class: "form-control", rows: 5} %>
-    <%= f.input :price, label: false, placeholder: "Ticket Price (£)", input_html: {class: "form-control"} %>
-    <div class="checkbox text-center">
-    <p> Projector </p>
-    <%= f.input :projector, required: false, label: false %>
-    <p> Cable </p>
-    <%= f.input :cables, required: false, label: false  %>
-    <p> Laptop </p>
-    <%= f.input :laptops, required: false, label: false  %>
-    <p> Seating </p>
-    <%= f.input :seating, required: false, label: false  %>
-    <p> Blinds </p>
-    <%= f.input :blinds, required: false, label: false %>
-    <p> Lighting </p>
-    <%= f.input :lighting, required: false, label: false %>
-    <p> Camcorder </p>
-    <%= f.input :camcorder, required: false, label: false %>
-    <p> Catering </p>
-    <%= f.input :catering, required: false, label: false %>
-    <p> Toilets </p>
-    <%= f.input :toilets, required: false, label: false %>
-    <p> Fire alarm </p>
-    <%= f.input :fire, required: false, label: false %>
-    <p> Wifi/internet </p>
-    <%= f.input :internet, required: false, label: false %>
+      <!--      Wizard container        -->   
+      <div class="wizard-container"> 
+        <%= simple_form_for(@listing, url: new_user_registration_path, method: :get) do |f| %>
+
+          <div class="card wizard-card ct-wizard-orange" id="wizard">
+            <!--        You can switch "ct-wizard-orange"  with one of the next bright colors: "ct-wizard-blue", "ct-wizard-green", "ct-wizard-orange", "ct-wizard-red"             -->
+
+            <div class="wizard-header">
+              <h3>
+                <b>LIST</b> YOUR MOVIE <br>
+                <small>This information will let us know more about your movie</small>
+              </h3>
+            </div>
+
+            <ul>
+              <li><a href="#about" data-toggle="tab">Movie info</a></li>
+              <li><a href="#account" data-toggle="tab">Location</a></li>
+              <li><a href="#address" data-toggle="tab">Equipment</a></li>
+            </ul>
+          
+            <div class="tab-content">
+
+              <!-- panel 1 -->
+              <div class="tab-pane" id="about">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4 class="info-text">Let's start with the basic information</h4>
+                  </div>
+                </div>          
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :title, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :time, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :date, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :seats, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :venue_name, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :price, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+              </div>
+
+              <!-- panel 2 -->
+              <div class="tab-pane" id="account">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4 class="info-text"> Give Us Some Information About Your Movie </h4>
+                  </div>
+                </div>          
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :location, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.input :other_info, input_html: {class: "form-control"} %>
+                  </div>
+                </div>
+              </div>
+
+              <!-- panel 3 -->
+              <div class="tab-pane" id="address">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4 class="info-text"> Do You have the following equipement </h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <%= f.input :projector, required: false %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :cables, required: false  %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :laptops, required: false  %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <%= f.input :seating, required: false  %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :blinds, required: false %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :blinds, required: false %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <%= f.input :lighting, required: false %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :camcorder, required: false %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :catering, required: false %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3 col-sm-offset-1">
+                    <%= f.input :toilets, required: false %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :fire, required: false %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= f.input :internet, required: false %>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="wizard-footer">
+              <div class="pull-right">
+                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Next' />
+                <%= f.button :submit, class: "btn btn-finish btn-fill btn-warning btn-wd btn-sm" %>
+              </div>
+              <div class="pull-left">
+                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />
+              </div>
+              <div class="clearfix"></div>
+            </div>  
+          </div>
+        <% end %>
+      </div> <!-- wizard container -->
     </div>
-  </div>
-
-  
-    <%= f.button :submit, class: "btn btn-primary btn-block" %>
-
-<% end %>
+  </div><!-- end row -->
+</div>
