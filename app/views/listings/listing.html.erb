@@ -1,5 +1,4 @@
-<%= render 'layouts/header' %>
-<%= simple_form_for(@listing, html: {class: "form-signin"}) do |f| %>
+<%= simple_form_for(@listing, url: new_user_registration_path, method: :get, html: {class: "form-signin"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -41,7 +40,3 @@
     <%= f.button :submit, class: "btn btn-primary btn-block" %>
 
 <% end %>
-
-
-<body>
-    

@@ -1,8 +1,35 @@
-
 <%= render 'layouts/header' %>
 	
 	<h2 class="text-center">Sign up</h2>
 		
+    <% 
+    if !user_signed_in?
+      resource.listings.build
+      resource.listings[0].title = params[:listing][:title]
+      resource.listings[0].time  = params[:listing][:time]
+      resource.listings[0].date = params[:listing][:date]
+      resource.listings[0].seats = params[:listing][:seats]
+      resource.listings[0].venue_name = params[:listing][:venue_name]
+      resource.listings[0].location = params[:listing][:location]
+      resource.listings[0].other_info = params[:listing][:other_info]
+      resource.listings[0].price = params[:listing][:price]
+      resource.listings[0].projector = params[:listing][:projector]
+      resource.listings[0].cables = params[:listing][:cables]
+      resource.listings[0].laptops = params[:listing][:laptops]
+      resource.listings[0].seating = params[:listing][:seating]
+      resource.listings[0].blinds = params[:listing][:blinds]
+      resource.listings[0].lighting = params[:listing][:lighting]
+      resource.listings[0].camcorder = params[:listing][:camcorder]
+      resource.listings[0].catering = params[:listing][:catering]
+      resource.listings[0].toilets = params[:listing][:toilets]
+      resource.listings[0].fire = params[:listing][:fire]
+      resource.listings[0].internet = params[:listing][:internet]
+    end
+    %>
+
+
+
+
   	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
 
   	  <%= f.error_notification %>
@@ -13,6 +40,47 @@
 
     <%= f.input :password, required: true, label: false, placeholder: "Password", input_html: {class: "form-control"} %>
     <%= f.input :password_confirmation, required: true, label: false, placeholder: "Password Confirmation", input_html: {class: "form-control"} %>
+
+    <div style="display:none">
+    <%= f.fields_for :listings do |listing_form| %>
+      <%= listing_form.input :title, label: false, placeholder: "Movie Title", input_html: {class: "form-control"} %>
+      <%= listing_form.input :time, label: false, placeholder: "What time does your movie start?", input_html: {class: "form-control"} %>
+      <%= listing_form.input :date, label: false, placeholder: "What date", input_html: {class: "form-control"} %>
+      <%= listing_form.input :seats, label: false, placeholder: "Number of seats", input_html: {class: "form-control"} %>
+      <%= listing_form.input :venue_name, label: false, placeholder: "Name of venue", input_html: {class: "form-control"} %>
+      <%= listing_form.input :location, label: false, placeholder: "Address", input_html: {class: "form-control", rows: 5 } %>
+      <%= listing_form.input :other_info, label: false, placeholder: "Other information", input_html: {class: "form-control", rows: 5} %>
+      <%= listing_form.input :price, label: false, placeholder: "Ticket Price (£)", input_html: {class: "form-control"} %>
+      <p> Projector </p>
+      <%= listing_form.input :projector, required: false, label: false %>
+      <p> Cable </p>
+      <%= listing_form.input :cables, required: false, label: false  %>
+      <p> Laptop </p>
+      <%= listing_form.input :laptops, required: false, label: false  %>
+      <p> Seating </p>
+      <%= listing_form.input :seating, required: false, label: false  %>
+      <p> Blinds </p>
+      <%= listing_form.input :blinds, required: false, label: false %>
+      <p> Lighting </p>
+      <%= listing_form.input :lighting, required: false, label: false %>
+      <p> Camcorder </p>
+      <%= listing_form.input :camcorder, required: false, label: false %>
+      <p> Catering </p>
+      <%= listing_form.input :catering, required: false, label: false %>
+      <p> Toilets </p>
+      <%= listing_form.input :toilets, required: false, label: false %>
+      <p> Fire alarm </p>
+      <%= listing_form.input :fire, required: false, label: false %>
+      <p> Wifi/internet </p>
+      <%= listing_form.input :internet, required: false, label: false %>
+
+    <% end %>
+    </div>
+
+
+
+
+
   
  
     <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block" %>

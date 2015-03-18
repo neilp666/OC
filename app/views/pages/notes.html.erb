@@ -1,0 +1,27 @@
+option 1 - user and listings in the same form.
+
+option 2
+
+  . form for a new list
+  . store in session and go to sign up form
+    session[:listings] = Hash.new
+    session[:listings][:title] = params[:listing][title]
+    ......
+
+  . when I submit the the form, I get the session values and create a new list (define after_create)
+  class User
+
+  	def after_save
+  		listings << List.new(title: session[:listings][:title],
+  		....)
+  	end
+
+  	current_user
+  	  User.find(session[:user_id])
+
+
+  option 3
+
+  app/views/devise/...
+
+  <input type="hidden" name="title" value="<%= paramas[:title] %>"

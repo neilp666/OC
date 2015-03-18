@@ -3,7 +3,10 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
-
+  def listing
+    @listing = Listing.new
+  end
+  
   def index
     @listings = Listing.all
     respond_with(@listings)
