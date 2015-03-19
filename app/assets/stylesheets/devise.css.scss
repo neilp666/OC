@@ -38,7 +38,7 @@
  
   background-image: url('https://dl.dropboxusercontent.com/s/dtqgjyonx0upzky/Canberra.jpg');
   background-attachment: fixed;
-  height: 700px; 
+  height: 900px; 
   margin: 0px;
   background-size: cover;
   background-position: center;
@@ -54,9 +54,7 @@
     margin-bottom: 80px;
   }
 
-  .container {
-    padding: 80px 0px;
-  }
+  
   
 
   .btn-xlarge {
@@ -68,4 +66,16 @@
             border-radius: 8px;
 }
 }
+
+
+.jumbotron1 {
+ 
+  background-image: url('https://dl.dropboxusercontent.com/s/dtqgjyonx0upzky/Canberra.jpg');
+  background-attachment: fixed;
+  height: 1200px; 
+  margin: 0px;
+  background-size: cover;
+  background-position: center;
+}
+  
 
