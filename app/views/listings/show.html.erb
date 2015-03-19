@@ -8,7 +8,7 @@
 <p>Start Time: <%= @listing.time %></p>
 <p>Start Date: <%= @listing.date %></p>
 <p>Number of seats: <%= @listing.seats %> </p>
-<p>Venue Name: <%= @listing.seats %> </p>
+<p>Venue Name: <%= @listing.venue_name %> </p>
 <p>Location: <%= @listing.location %></p>
 </div>
  
@@ -31,8 +31,6 @@
  
 </div>
 
- 
-<%= link_to "Edit", edit_listing_path(@listing)  %>
-<%= link_to "Back", listing_path  %>
+
 
 

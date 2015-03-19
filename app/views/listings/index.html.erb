@@ -1,41 +1,36 @@
-<%= render 'layouts/header' %>
-<h3 class="center">Current Movies you can buy tickets for </h3>
 
-<table class="table">
-  <thead>
+<div class="center">
+  <h2>Current Movies You Can Buy Tickets For</h2>
+</div>
+
+<table class="table table-striped table-bordered table-condensed table-hover">
     <tr>
-      <th>Title</th>
-      <th>Time</th>
-      <th>Date</th>
-      <th>Seats</th>
-      <th>Venue name</th>
-      <th>Location</th>
-      <th>Other info</th>
-      <th>Price</th>
+      <th class="center">Title</th>
+      <th class="center">Item</th>
+      <th class="center">Date</th>
+      <th class="center">Location</th>
+      <th class="center">Price</th>
+      <th class="center">Action</th>
     </tr>
-  </thead>
+ 
 
-  <tbody>
     <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.title %></td>
         <td><%= listing.time %></td>
         <td><%= listing.date %></td>
-        <td><%= listing.seats %></td>
-        <td><%= listing.venue_name %></td>
         <td><%= listing.location %></td>
-        <td><%= listing.other_info %></td>
         <td><%= listing.price %></td>
         
-        
-        <td><%= link_to 'MORE INFO', listing %></td>
-        <td><%= link_to 'BUY TICKETS NOW' %></td>
+        <td>
+          <%= link_to 'Buy Tickets Now', "/", class: "btn btn-danger" %>
+          <%= link_to 'View More Info', listing, class: "btn btn-primary" %>
+        </td>
         
       </tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= render 'layouts/header' %>
