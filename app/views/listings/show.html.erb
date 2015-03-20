@@ -1,36 +1,3 @@
-
 <%= render 'layouts/header' %>
 
-<div class="row">
- 
-<div class="col-md-6">
-<p>Movie Title <%= @listing.title %></p>
-<p>Start Time: <%= @listing.time %></p>
-<p>Start Date: <%= @listing.date %></p>
-<p>Number of seats: <%= @listing.seats %> </p>
-<p>Venue Name: <%= @listing.venue_name %> </p>
-<p>Location: <%= @listing.location %></p>
-</div>
- 
-
-<div class="col-md-6">
-<p>Any other info:<%= @listing.other_info %></p>
-<p>Ticket Price:<%= @listing.price %></p>
-<p>Projector:<%= @listing.projector %></p>
-<p>Cables:<%= @listing.cables %></p>
-<p>Laptops:<%= @listing.laptops %></p>
-<p>Seating:<%= @listing.seating %></p>
-<p>Blinds:<%= @listing.blinds %></p>
-<p>Lighting:<%= @listing.lighting %></p>
-<p>Camcorder:<%= @listing.camcorder %></p>
-<p>Catering<%= @listing.catering %></p>
-<p>Toilets<%= @listing.toilets %></p>
-<p>Fire<%= @listing.fire %></p>
-<p>Internet<%= @listing.internet %></p>
-</div>
- 
-</div>
-
-
-
-
+<%= render 'show' %>

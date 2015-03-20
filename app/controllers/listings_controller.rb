@@ -13,7 +13,11 @@ class ListingsController < ApplicationController
   end
 
   def show
-    respond_with(@listing)
+    respond_to do |format|
+      format.html { respond_with(@listing) }
+      format.js {}
+    end
+    
   end
 
   def new

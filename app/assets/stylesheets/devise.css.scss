@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -49,10 +51,16 @@
   }
 
   h2 {
+
     color: #fff;
     text-shadow: 0px 2px 3px #555;
     margin-bottom: 80px;
   }
+
+  h3 {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Lato','Hobo Std';}
 
   
   

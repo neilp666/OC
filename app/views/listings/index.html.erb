@@ -1,9 +1,20 @@
 
-<div class="center">
-  <h2>Current Movies You Can Buy Tickets For</h2>
-</div>
+<nav class="navbar navbar-default">
+      <div class="container-fluid">
 
-<table class="table table-striped table-bordered table-condensed table-hover">
+        <ul class="nav navbar-nav">
+          <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i> Back</a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+<div class="container">
+
+      <h3 class="text-center mb-40">Current Movies You Can Buy Tickets For</h3>
+
+      <table class="table table-striped table-bordered">
+
     <tr>
       <th class="center">Title</th>
       <th class="center">Item</th>
@@ -23,8 +34,8 @@
         <td><%= listing.price %></td>
         
         <td>
-          <%= link_to 'Buy Tickets Now', "/", class: "btn btn-danger" %>
-          <%= link_to 'View More Info', listing, class: "btn btn-primary" %>
+          <%= link_to 'Buy Tickets Now', "/", class: "btn btn-success" %>
+          <%= link_to 'View More Info', listing_path(listing), remote: true, id: 'showButton', class: 'btn btn-primary' %>
         </td>
         
       </tr>
@@ -33,4 +44,21 @@
 
 <br>
 
-<%= render 'layouts/header' %>
+<div id="modal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Movie Info</h4>
+               <hr>
+          </div>
+          <div class="modal-body" id="modelContent">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success">Buy Tickets Now</button>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -2,25 +2,31 @@
 <div class="row">
 <h1 class="text-center">Dashboard</h1>
 <div class="col-md-4">
-<h3 class="text-center">
-	<%= link_to "Create New Cinema", new_listing_path, class: "btn btn-primary btn-lg" %>
-</h3>
 
-<table class="table">
+	<h3 class="text-center">
+		Your Cinema Listings <%= link_to "Create New Cinema", new_listing_path, class: "btn btn-primary bt-sm" %></h3>
+
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th>Movie</th>
-			<th>Time</th>
 			<th>Date</th>
-			<th></th>
+			<th>Seats</th>
+			<th>Venue Name</th>
+			<th>Action</th>
+			<th>Date created</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @listings.each do |listing| %>
 		<tr>
-			<td><%= listing.title %></td>
-			<td><%= listing.time %></td>
+			<td><%= link_to listing.title, listing_path(listing) %></td>
 			<td><%= listing.date %></td>
+			<td><%= listing.seats %></td>
+			<td><%= listing.venue_name %></td>
+			
+			<td><%= link_to "Edit Movie", edit_listing_path(listing) %></td>
+			<td>Published at <%= listing.created_at.strftime('%b %d, %y') %></td>
 		</tr>
 		<% end %>
 	</tbody>
@@ -28,13 +34,12 @@
 </div>
   <div class="col-md-4">
     <h3 class="text-center">
-      Purchased
+      Purchased Movies
     </h3>
   </div>
   <div class="col-md-4">
     <h3 class="text-center">
-      Sales
+      Ticket Sales
     </h3>
-    <p>Number of tickets sold</p>
   </div>
 </div>
