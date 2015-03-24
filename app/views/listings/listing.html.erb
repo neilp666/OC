@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
 
-      <!--      Wizard container        -->   
+      <!--      Wizard container   :html => { multipart: true })      -->   
       <div class="wizard-container"> 
-        <%= simple_form_for(@listing, url: new_user_registration_path, method: :get) do |f| %>
+        <%= simple_form_for(@listing, url: new_user_registration_path, method: :get,  :html => { multipart: true } ) do |f| %>
 
           <div class="card wizard-card ct-wizard-orange" id="wizard">
             <!--        You can switch "ct-wizard-orange"  with one of the next bright colors: "ct-wizard-blue", "ct-wizard-green", "ct-wizard-orange", "ct-wizard-red"             -->
@@ -55,10 +55,17 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-10 col-sm-offset-1">
-                    <%= f.input :venue_name, placeholder: "Give your venue a name", input_html: {class: "form-control"} %>
+                    <%= f.input :venue_name, placeholder: "Give your venue a name upload image", input_html: {class: "form-control"} %>
                   </div>
                 </div>
 
+    <!------ IMAGE FIELD ------>
+
+                 <div class="row">
+                  <div class="col-sm-10 col-sm-offset-1">
+                    <%= f.file_field :image %><br>
+                  </div>
+                </div>
 
 
                 <div class="row">

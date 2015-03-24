@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
   		 	:email, :password, :confirmation_password, 
 	  		listings_attributes: [
 	  			:title, :time, :date, :seats,
-				:venue_name, :location, :other_info,
-				:price, :projector, :cables,
-				:laptops, :seating, :blinds,
-				:lighting, :camcorder, :catering,
-				:toilets, :fire, :internet
+  				:venue_name, :location, :other_info,
+  				:price, :projector, :cables,
+  				:laptops, :seating, :blinds,
+  				:lighting, :camcorder, :catering,
+  				:toilets, :fire, :internet, :image
 	  		]
 	  	)
 	  end 
