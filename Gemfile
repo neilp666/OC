@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'intercom-rails'
 gem 'carrierwave'
+gem 'stripe'
 
 group :development do 
   gem 'spring'
